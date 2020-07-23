@@ -6,7 +6,7 @@
 /*   By: soilee <soilee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 21:21:47 by soilee            #+#    #+#             */
-/*   Updated: 2020/07/23 18:04:35 by soilee           ###   ########.fr       */
+/*   Updated: 2020/07/23 21:34:31 by soilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,15 @@ int	ft_is_odd(char *str)
 	count = 0;
 	while (*(str + i) != '\0')
 	{
+		if (*(str + i) >= 48 && *(str + i) <= 57)
+			break ;
 		if (*(str + i) == '-')
 			count++;
 		i++;
 	}
 	if (count == 1)
 		return (-1);
-	else if (count / 2 == 0)
+	else if (count % 2 == 0)
 		return (1);
 	else
 		return (-1);
